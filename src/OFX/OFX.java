@@ -2,10 +2,10 @@ package OFX;
 
 import Auxiliar.LctoTemplate;
 import Auxiliar.Valor;
+import fileManager.FileManager;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import main.Arquivo;
 
 public class OFX {
 
@@ -15,7 +15,7 @@ public class OFX {
         List<LctoTemplate> lctos = new ArrayList<>();
         try {
             //Ler arquivo
-            String textoArquivo = Arquivo.ler(arquivo.getAbsolutePath()).replaceAll("\r", "");
+            String textoArquivo = FileManager.getText(arquivo.getAbsolutePath()).replaceAll("\r", "");
             String[] linhas = textoArquivo.split("\n");
 
             String data = "";
